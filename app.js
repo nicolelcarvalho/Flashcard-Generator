@@ -307,7 +307,14 @@ function userCreatesClozeCards() {
 		{
 			name: "cloze",
 			type: "input",
-			message: "Write just the cloze."
+			message: "Write just the cloze.",
+			validate: function(value) {
+				if(!value) {
+					console.log("Please enter a valid cloze.");
+				} else {
+					return true;
+				}
+			}
 		},
 		{
 			name: "newOrShow",

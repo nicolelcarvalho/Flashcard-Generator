@@ -1,12 +1,34 @@
 [
   {
-    "fullText": "The world's largest desert is the Sahara.",
-    "cloze": "Sahara",
-    "partial": "The world's largest desert is the ...."
+    "front": "Who was the first president of the United States?",
+    "back": "George Washington"
   },
   {
-    "fullText": "Venus is the hottest planet in our solar system.",
-    "cloze": "Venus",
-    "partial": "... is the hottest planet in our solar system."
+    "front": "World War I began in what year?",
+    "back": "1914"
+  },
+  {
+    "front": "In what city was the Declaration of Independence signed?",
+    "back": "Philadelphia"
+  },
+  {
+    "front": "In what year did America land the first man on the moon?",
+    "back": "1969"
+  },
+  {
+    "front": "Which country did America buy the Louisiana Purchase from?",
+    "back": "France"
+  },
+  {
+    "front": "Who were the first people to fly an airplane?",
+    "back": "The Wright Brothers"
+  },
+  {
+    "front": "Who invented the electric light bulb?",
+    "back": "Thomas Edison"
+  },
+  {
+    "front": "Who is credited with discovering America?",
+    "back": "Christopher Columbus"
   }
 ]
