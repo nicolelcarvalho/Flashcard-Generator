@@ -1,6 +1,42 @@
 [
   {
-    "front": "Hello my name is",
-    "back": "Hello"
+    "fullText": "George Washington was the first President of the United States.",
+    "cloze": "George Washington",
+    "partial": "... was the first President of the United States."
+  },
+  {
+    "fullText": "The first World War began in 1914.",
+    "cloze": "1914",
+    "partial": "The first World War began in ...."
+  },
+  {
+    "fullText": "The Declaration of Independence was signed in the city of Philadelphia in 1776.",
+    "cloze": "Philadelphia",
+    "partial": "The Declaration of Independence was signed in the city of ... in 1776."
+  },
+  {
+    "fullText": "In 1969 America landed the first man on the moon.",
+    "cloze": "1969",
+    "partial": "In ... America landed the first man on the moon."
+  },
+  {
+    "fullText": "America bought The Louisiana Purchase from France.",
+    "cloze": "France",
+    "partial": "America bought The Louisiana Purchase from ...."
+  },
+  {
+    "fullText": "The Wright Brothers were the first people to fly an airplane.",
+    "cloze": "Wright Brothers",
+    "partial": "The ... were the first people to fly an airplane."
+  },
+  {
+    "fullText": "The electric light bulb was invented by Thomas Edison.",
+    "cloze": "Thomas Edison",
+    "partial": "The electric light bulb was invented by ...."
+  },
+  {
+    "fullText": "Christopher Columbus is credited with discovering America.",
+    "cloze": "Christopher Columbus",
+    "partial": "... is credited with discovering America."
   }
 ]

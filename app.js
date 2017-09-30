@@ -2,6 +2,7 @@
 var BasicCard = require("./BasicCard.js");
 var ClozeCard = require("./ClozeCard.js");
 var inquirer = require("inquirer");
+var handlebars = require("handlebars");
 var fs = require("fs");
 
 
@@ -11,7 +12,6 @@ var editedClozeArr = [];       // Holds the stored cloze flashcard objects, with
 var count = 0;  // Count variable allows us to advance to the next question as the questions are being read from the .txt files
 
 
-
 // Start the first prompt 
 function startPrompt() {
 	inquirer.prompt([
@@ -19,7 +19,7 @@ function startPrompt() {
 			name: "select",
 			type: "list",
 			message: "What would you like to do?",
-			choices: ["Show flashcards from stored library.", "Create new flashcards."]
+			choices: ["Show flashcards from stored library.", "Create new flashcards.", "Quit."]
 		}
 
 		]).then(function(userSelect) {
@@ -27,12 +27,13 @@ function startPrompt() {
 				typeOfFlashCards();
 			} else if(userSelect.select === "Create new flashcards.") {
 				createNewFlashCards();
+			} else if(userSelect.select === "Quit.") {
+				console.log("Thanks for playing!");
 			}
 
 		});
 }
 startPrompt();
-
 
 
 // Allow the user to choose what type of flashcards they would like to use from the stored questions: cloze or basic 
@@ -64,16 +65,40 @@ function createBasicFlashCards() {
 	var worldWar = new BasicCard(
 		"World War I began in what year?", "1914");
 
+	var independence = new BasicCard(
+		"In what city was the Declaration of Independence signed?", "Philadelphia");
+
+	var manOnMoon = new BasicCard(
+		"In what year did America land the first man on the moon?", "1969");
+
+	var louisianaPurchase = new BasicCard(
+		"Which country did America buy the Louisiana Purchase from?", "France");
+
+	var wrightBrothers = new BasicCard(
+		"Who were the first people to fly an airplane?", "The Wright Brothers");
+
+	var lightBulb = new BasicCard(
+		"Who invented the electric light bulb?", "Thomas Edison");
+
+	var discoveringAmerica = new BasicCard(
+		"Who is credited with discovering America?", "Christopher Columbus");
+
 	basicCardsArr.push(firstPresident);
 	basicCardsArr.push(worldWar);
+	basicCardsArr.push(independence);
+	basicCardsArr.push(manOnMoon);
+	basicCardsArr.push(louisianaPurchase);
+	basicCardsArr.push(wrightBrothers);
+	basicCardsArr.push(lightBulb);
+	basicCardsArr.push(discoveringAmerica);
 
+	// Write questions in JSON format to questions.json file
 	fs.writeFile("questions.json", JSON.stringify(basicCardsArr, null, 2), function(error, data) {
 		if(error) {
 			console.log(error);
 		}
 		// Then show the basic flashcards
 		showBasicFlashCards();
-
 	});
 }
 
@@ -87,20 +112,45 @@ function createClozeFlashCards() {
 	var worldWar = new ClozeCard(
 		"The first World War began in 1914.", "1914");
 
+	var independence = new ClozeCard(
+		"The Declaration of Independence was signed in the city of Philadelphia in 1776.", "Philadelphia");
+
+	var manOnMoon = new ClozeCard(
+		"In 1969 America landed the first man on the moon.", "1969");
+
+	var louisianaPurchase = new ClozeCard(
+		"America bought The Louisiana Purchase from France.", "France");
+
+	var wrightBrothers = new ClozeCard(
+		"The Wright Brothers were the first people to fly an airplane.", "Wright Brothers");
+
+	var lightBulb = new ClozeCard(
+		"The electric light bulb was invented by Thomas Edison.", "Thomas Edison");
+
+	var discoveringAmerica = new ClozeCard(
+		"Christopher Columbus is credited with discovering America.", "Christopher Columbus");
+
 	clozeCardsArr.push(firstPresident);
 	clozeCardsArr.push(worldWar);
+	clozeCardsArr.push(independence);
+	clozeCardsArr.push(manOnMoon);
+	clozeCardsArr.push(louisianaPurchase);
+	clozeCardsArr.push(wrightBrothers);
+	clozeCardsArr.push(lightBulb);
+	clozeCardsArr.push(discoveringAmerica);
 
+	// Loop through the array of cloze question objects
 	for (var i = 0; i < clozeCardsArr.length; i++) {
 			var partial = clozeCardsArr[i].partial();
-
+			// Add the partial property that contains the partial text of the question
 			var clozeObj = {
 				fullText: clozeCardsArr[i].text,
 				cloze: clozeCardsArr[i].cloze,
 				partial: partial
 			}
-
+			// Push the clozeObj that contains all three needed properties to its own array and write this array to the questions.json file
 			editedClozeArr.push(clozeObj);
-
+			// Write questions in JSON format to questions.json file
 			fs.writeFile("questions.json", JSON.stringify(editedClozeArr, null, 2), function(error, data) {
 				if(error) {
 					console.log(error);
@@ -142,7 +192,8 @@ function showBasicFlashCards() {
 
 		} else {
 			count = 0;
-			console.log("You completed the flashcards!");
+			basicCardsArr = [];
+			completedFlashCards();
 		}
 	});
 } 
@@ -156,15 +207,6 @@ function showClozeFlashCards() {
 
 		if(count < clozeCardsObj.length) {
 			currentFlashcard = clozeCardsObj[count];
-		
-			// If user selects "cloze cards"
-				fs.writeFile("flashcards.html", "<div class='flashcard-content'>" + clozeCardsObj[count].partial + "</div>", function(error, data) {
-					// Set timeout to delay presenting the answer
-				});
-
-				// Set timeout to delay presenting the answer
-				// Then, write to the screen the answer. 
-
 
 			inquirer.prompt([
 			{
@@ -174,8 +216,7 @@ function showClozeFlashCards() {
 			}
 
 			]).then(function(answer){
-				// var userAnswer = answer.question
-				// var capUserAnswer = userAnswer.style.textTransform = "capitalize";
+
 				if(answer.question === clozeCardsObj[count].cloze) {
 							console.log("That's correct!");
 					} else {
@@ -188,11 +229,12 @@ function showClozeFlashCards() {
 
 		} else {
 			count = 0;
-			console.log("You completed the flashcards!");
+			clozeCardsArr = [];
+			editedClozeArr = [];
+			completedFlashCards();
 		}
 	});
 }
-
 
 
 //Prompts for the user to create their own cards.
@@ -213,6 +255,7 @@ function createNewFlashCards() {
 			}
 		});
 }
+
 
 // Allows the user to create their own basic flashcards
 function userCreatesBasicCards() {
@@ -260,12 +303,12 @@ function userCreatesClozeCards() {
 		{
 			name: "fullText",
 			type: "input",
-			message: "Write the full sentence of the flashcard including the cloze"
+			message: "Write the full sentence of the flashcard including the cloze."
 		},
 		{
 			name: "cloze",
 			type: "input",
-			message: "Write just the cloze (the word(s) you would like deleted from the sentence)"
+			message: "Write just the cloze, which is the word(s) that you would like deleted from the sentence. Please note it's case sensitive."
 		},
 		{
 			name: "newOrShow",
@@ -290,17 +333,39 @@ function userCreatesClozeCards() {
 								cloze: clozeCardsArr[i].cloze,
 								partial: partial
 							}
-
 								editedClozeArr.push(clozeObj);
+							}
 
-							fs.writeFile("questions.json", JSON.stringify(editedClozeArr, null, 2), function(error, data) {
-								if(error) {
-									console.log(error);
-								}
-							});
-						}
+						fs.writeFile("questions.json", JSON.stringify(editedClozeArr, null, 2), function(error, data) {
+							if(error) {
+								console.log(error);
+							}
+						});
 
-					showClozeFlashCards();
+						showClozeFlashCards();
 				}
 		});
 }
+
+
+function completedFlashCards() {
+	inquirer.prompt([
+		{
+			name: "next",
+			type: "list",
+			message: "Great job! You completed this set of flashcards. What would you like to do next?",
+			choices: ["Show flashcards from stored library.", "Create new flashcards.", "Quit."]
+		}
+
+		]).then(function(userSelect) {
+			if(userSelect.next === "Show flashcards from stored library.") {
+				typeOfFlashCards();
+			} else if(userSelect.next === "Create new flashcards.") {
+				createNewFlashCards();
+			} else if(userSelect.next === "Quit.") {
+				console.log("Thanks for playing!");
+			}
+		});
+}
+
+

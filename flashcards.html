@@ -1,1 +1,6 @@
-<div class='flashcard-content'>Helo my name is</div>
+function ret(context, execOptions) {
+    if (!compiled) {
+      compiled = compileInput();
+    }
+    return compiled.call(this, context, execOptions);
+  }
