@@ -2,7 +2,6 @@
 var BasicCard = require("./BasicCard.js");
 var ClozeCard = require("./ClozeCard.js");
 var inquirer = require("inquirer");
-var handlebars = require("handlebars");
 var fs = require("fs");
 
 
