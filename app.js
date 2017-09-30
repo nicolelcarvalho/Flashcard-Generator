@@ -352,7 +352,7 @@ function completedFlashCards() {
 		{
 			name: "next",
 			type: "list",
-			message: "Great job! You completed this set of flashcards. What would you like to do next?",
+			message: "You completed this set of flashcards! What would you like to do next?",
 			choices: ["Show flashcards from stored library.", "Create new flashcards.", "Quit."]
 		}
 
