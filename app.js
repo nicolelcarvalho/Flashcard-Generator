@@ -302,17 +302,17 @@ function userCreatesClozeCards() {
 		{
 			name: "fullText",
 			type: "input",
-			message: "Write the full sentence of the flashcard including the cloze."
+			message: "Write the full sentence including the cloze."
 		},
 		{
 			name: "cloze",
 			type: "input",
-			message: "Write just the cloze, which is the word(s) that you would like deleted from the sentence."
+			message: "Write just the cloze."
 		},
 		{
 			name: "newOrShow",
 			type: "list",
-			message: "Would you like to create another cloze flashcard or begin showing your flashcards?",
+			message: "Would you like to create another or begin showing your flashcards?",
 			choices: ["Create another cloze flashcard", "Begin showing flashcards"]
 		}
 
