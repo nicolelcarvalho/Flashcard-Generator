@@ -307,7 +307,7 @@ function userCreatesClozeCards() {
 		{
 			name: "cloze",
 			type: "input",
-			message: "Write just the cloze, which is the word(s) that you would like deleted from the sentence. Please note it's case sensitive."
+			message: "Write just the cloze, which is the word(s) that you would like deleted from the sentence."
 		},
 		{
 			name: "newOrShow",

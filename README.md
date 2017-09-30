@@ -15,7 +15,14 @@ Users have the option to view or create flashcards in a **basic** flashcard form
 
 ## Demonstration
 
-![basiccard](images/storedBasicCards.gif);
+### Basic Cards:
+![basiccard](images/basicStoredCards.gif);
+
+### Cloze Cards:
+![clozecard](images/clozeStoredCards.gif);
+
+## Create your own cloze cards:
+![createclozecard](images/createClozeCards.gif);
 
 ## Getting Started
 
