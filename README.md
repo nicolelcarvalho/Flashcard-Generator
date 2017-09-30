@@ -15,15 +15,15 @@ Users have the option to view or create flashcards in a **basic** flashcard form
 
 #### Cloze Deletions
 
-	A **cloze deletion** is simply a sentence that has had some of its text removed. For example, given the sentence:
+A **cloze deletion** is simply a sentence that has had some of its text removed. For example, given the sentence:
 
-		_"George Washington was the first president of the United States."_
+	_"George Washington was the first president of the United States."_
 
-		...We can create a "cloze deletion" by removing the words _"George Washington"_:
+	...We can create a "cloze deletion" by removing the words _"George Washington"_:
 
-		_"... was the first president of the United States."_
+	_"... was the first president of the United States."_
 
-	This is useful for building flash card applications that forces users to remember the important part of a sentence, and is [a common device in educational applications](https://en.wikipedia.org/wiki/Cloze_test).
+This is useful for building flash card applications that forces users to remember the important part of a sentence, and is [a common device in educational applications](https://en.wikipedia.org/wiki/Cloze_test).
 
 ## Getting Started
 
