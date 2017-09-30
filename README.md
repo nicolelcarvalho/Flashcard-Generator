@@ -13,17 +13,9 @@ Users have the option to view or create flashcards in a **basic** flashcard form
 
 * **Cloze-Deleted** flashcards present _partial_ text (_"... was the first president of the United States."_).
 
-#### Cloze Deletions
+## Demonstration
 
-A **cloze deletion** is simply a sentence that has had some of its text removed. For example, given the sentence:
-
-	"George Washington was the first president of the United States."
-
-	...We can create a "cloze deletion" by removing the words "George Washington":
-
-	"... was the first president of the United States."
-
-This is useful for building flash card applications that forces users to remember the important part of a sentence, and is [a common device in educational applications](https://en.wikipedia.org/wiki/Cloze_test).
+![basiccard](images/storedBasicCards.gif);
 
 ## Getting Started
 
