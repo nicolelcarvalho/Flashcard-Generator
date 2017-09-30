@@ -17,11 +17,11 @@ Users have the option to view or create flashcards in a **basic** flashcard form
 
 A **cloze deletion** is simply a sentence that has had some of its text removed. For example, given the sentence:
 
-	_"George Washington was the first president of the United States."_
+	"George Washington was the first president of the United States."
 
-	...We can create a "cloze deletion" by removing the words _"George Washington"_:
+	...We can create a "cloze deletion" by removing the words "George Washington":
 
-	_"... was the first president of the United States."_
+	"... was the first president of the United States."
 
 This is useful for building flash card applications that forces users to remember the important part of a sentence, and is [a common device in educational applications](https://en.wikipedia.org/wiki/Cloze_test).
 
@@ -31,9 +31,9 @@ This is useful for building flash card applications that forces users to remembe
 - Run command 'npm install' in Terminal or GitBash to install necessary npms
 - Run command 'node app.js' in Terminal or GitBash to run the application
 - You will be given a menu of options:
-  * - 'Show flashcards from stored library' will allow you to view flashcards from questions already created.
-  * - 'Create new flashcards' will allow you to create your own set of questions to use as flashcards. 
-  * - 'Quit' will allow you to quit the applicaton.
+  * 'Show flashcards from stored library' will allow you to view flashcards from questions already created.
+  * 'Create new flashcards' will allow you to create your own set of questions to use as flashcards. 
+  * 'Quit' will allow you to quit the applicaton.
 - You will then be able to view or create flashcards in a Basic flashcard format or Cloze flashcard format. 
 - Once you have run through all of the flashcards, you will be taken back to the original menu.
 
