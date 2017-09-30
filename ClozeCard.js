@@ -15,6 +15,9 @@ ClozeCard.prototype.partial = function() {
 	// Pass this.cloze into .split in order to locate and replace the cloze keyword in the array
 	// Replace the defaulted comma with ... by using .join("...")
 	var partialTextArr = partialText.split(this.cloze).join("...");
+	if(partialTextArr = partialText.split(this.cloze).join("...")) {
+		
+	}
 
 	return(partialTextArr);
 }
