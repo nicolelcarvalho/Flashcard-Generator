@@ -28,18 +28,13 @@ This is useful for building flash card applications that forces users to remembe
 ## Getting Started
 
 - Clone down repo.
-
-- Run command 'npm install' in Terminal or GitBash to install necessary npms
-
-- Run command 'node app.js' in Terminal or GitBash to run the application
-
+- Run command `npm install` in Terminal or GitBash to install necessary npms
+- Run command `node app.js` in Terminal or GitBash to run the application
 - You will then be given a menu of options:
-  * 'Show flashcards from stored library' will allow you to view flashcards from questions already created.
-  * 'Create new flashcards' will allow you to create your own set of questions to use as flashcards. 
-  * 'Quit' will allow you to quit the applicaton.
-
+  * `Show flashcards from stored library` will allow you to view flashcards from questions already created.
+  * `Create new flashcards` will allow you to create your own set of questions to use as flashcards. 
+  * `Quit` will allow you to quit the applicaton.
 - You will then be able to view or create flashcards in a basic flashcard format or cloze flashcard format.
-
 - Once you have run through all of the flashcards, you will be taken back to the original menu.
 
 ## Tech used
